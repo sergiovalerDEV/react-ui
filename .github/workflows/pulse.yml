@@ -1,11 +1,7 @@
 name: Pulse
 
 on:
-  push:
-    branches: [main, 'feature/**', 'fix/**', 'chore/**', 'refactor/**']
-  pull_request:
-    types: [opened, synchronize, reopened]
-    branches: [main]
+  workflow_dispatch:
 
 jobs:
 
