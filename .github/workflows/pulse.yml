@@ -2,7 +2,7 @@ name: Pulse
 
 on:
   push:
-    branches: [main, 'feat/**', 'fix/**', 'chore/**', 'refactor/**']
+    branches: [main, 'feature/**', 'fix/**', 'chore/**', 'refactor/**']
   pull_request:
     types: [opened, synchronize, reopened]
     branches: [main]
@@ -166,4 +166,3 @@ jobs:
         timeout-minutes: 5
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          
