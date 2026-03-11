@@ -103,7 +103,7 @@ jobs:
 
       - name: Verify fonts bundled
         run: |
-          FONT_COUNT=$(find dist/assets -name "*.otf" 2>/dev/null | wc -l)
+          FONT_COUNT=$(find dist/assets -name "*.OTF" 2>/dev/null | wc -l)
           echo "OTF fonts found in dist/assets: $FONT_COUNT"
           [ "$FONT_COUNT" -ge 1 ] || (echo "No fonts found in dist/assets" && exit 1)
 
