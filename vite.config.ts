@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import dts from 'vite-plugin-dts'
+import { viteStaticCopy } from 'vite-plugin-static-copy'
 import { resolve } from 'path'
 
 export default defineConfig({
@@ -10,6 +11,14 @@ export default defineConfig({
       include: ['src'],
       outDir: 'dist/types',
       rollupTypes: true,
+    }),
+    viteStaticCopy({
+      targets: [
+        {
+          src: 'src/assets/fonts/*.OTF',
+          dest: 'assets/fonts',
+        },
+      ],
     }),
   ],
 
@@ -33,12 +42,13 @@ export default defineConfig({
     },
     rollupOptions: {
       external: ['react', 'react-dom', 'react/jsx-runtime'],
+      input: resolve(__dirname, 'src/index.ts'),
       output: {
         globals: {
           react: 'React',
           'react-dom': 'ReactDOM',
         },
-        assetFileNames: 'assets/[name]-[hash][extname]',
+        assetFileNames: 'assets/[name][extname]',
       },
     },
     assetsInlineLimit: 0,

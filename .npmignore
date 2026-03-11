@@ -1,6 +1,7 @@
     src/
     dev/
     *.config.ts
+    *.svg
     tsconfig*.json
     .eslintrc*
     .gitignore
