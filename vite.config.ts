@@ -17,9 +17,9 @@ export default defineConfig({
     preprocessorOptions: {
       scss: {
         additionalData: `
-        @use "${resolve(__dirname, 'src/styles/variables').replace(/\\/g, '/')}" as *;
-        @use "${resolve(__dirname, 'src/styles/breakpoints').replace(/\\/g, '/')}" as *;
-      `,
+          @use "${resolve(__dirname, 'src/styles/variables').replace(/\\/g, '/')}" as *;
+          @use "${resolve(__dirname, 'src/styles/breakpoints').replace(/\\/g, '/')}" as *;
+        `,
       },
     },
   },
@@ -27,7 +27,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
-      name: 'MyLibrary',
+      name: 'ReactUI',
       formats: ['es', 'cjs'],
       fileName: (format) => `index.${format}.js`,
     },
@@ -38,8 +38,10 @@ export default defineConfig({
           react: 'React',
           'react-dom': 'ReactDOM',
         },
+        assetFileNames: 'assets/[name]-[hash][extname]',
       },
     },
+    assetsInlineLimit: 0,
     sourcemap: true,
     emptyOutDir: true,
   },
