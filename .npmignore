@@ -1,0 +1,7 @@
+    src/
+    dev/
+    *.config.ts
+    tsconfig*.json
+    .eslintrc*
+    .gitignore
+    node_modules/

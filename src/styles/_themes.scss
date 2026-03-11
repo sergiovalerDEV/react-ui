@@ -1,0 +1,15 @@
+@use "variables" as *;
+
+.theme-dark {
+  --color-accent:     #{$gradient-primary-dark-start};
+  --color-accent-end: #{$gradient-primary-dark-end};
+  --color-text:       #{$text-color-dark};
+  --color-bg:         #{$body-bg-dark};
+}
+
+.theme-light {
+  --color-accent:     #{$gradient-primary-light-start};
+  --color-accent-end: #{$gradient-primary-light-end};
+  --color-text:       #{$text-color-light};
+  --color-bg:         #{$body-bg-light};
+}

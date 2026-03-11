@@ -1,0 +1,23 @@
+    @mixin below-1280 {
+        @media (max-width: 1280px) {
+            @content;
+        }
+    }
+
+    @mixin below-1024 {
+        @media (max-width: 1024px) {
+            @content;
+        }
+    }
+
+    @mixin below-768 {
+        @media (max-width: 768px) {
+            @content;
+        }
+    }
+
+    @mixin below-480 {
+        @media (max-width: 480px) {
+            @content;
+        }
+    }
