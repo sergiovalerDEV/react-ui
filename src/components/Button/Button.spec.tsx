@@ -56,4 +56,12 @@ describe('Button', () => {
         expect(link).not.toHaveAttribute('target');
         expect(link).not.toHaveAttribute('rel');
     });
+
+    test('renders with default theme and openInNewTab values', () => {
+        render(<Button href="https://example.com" label="Default Test" />);
+        const link = screen.getByRole('link');
+        expect(link).toHaveClass('base-button', 'dark-theme');
+        expect(link).toHaveAttribute('target', '_blank');
+        expect(link).toHaveAttribute('rel', 'noopener noreferrer');
+    });
 });
