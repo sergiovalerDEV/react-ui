@@ -7,17 +7,16 @@
       "DOM.Iterable"
     ],
     "module": "ESNext",
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
     "jsx": "react-jsx",
     "strict": true,
     "skipLibCheck": true,
     "resolveJsonModule": true,
-    "allowImportingTsExtensions": true,
-    "noEmit": true // Solo para IDE/dev
+    "esModuleInterop": true,
+    "noEmit": true
   },
   "include": [
     "src",
-    "dev",
     "dev"
   ]
 }
