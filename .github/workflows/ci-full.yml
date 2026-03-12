@@ -153,7 +153,6 @@ jobs:
             -Dsonar.organization=${{ secrets.SONAR_ORGANIZATION }}
             -Dsonar.projectName=${{ secrets.SONAR_PROJECT_NAME }}
             -Dsonar.projectVersion=${{ steps.pkg.outputs.version }}
-            -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
 
       # Comparte el reporte generado por el scan con el siguiente job
       - name: Upload scan report

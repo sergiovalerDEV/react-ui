@@ -17,6 +17,8 @@ export default {
         'src/**/*.{ts,tsx}',
         '!src/**/*.d.ts',
         '!src/index.ts',
+        '!src/**/*.spec.{ts,tsx}',  
+        '!src/**/*.test.{ts,tsx}', 
     ],
 
     coverageReporters: ['text', 'lcov', 'clover'],
