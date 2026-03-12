@@ -137,6 +137,12 @@ jobs:
       - name: Run tests with coverage
         run: npm run test:coverage
 
+      - name: Verify lcov.info exists
+        run: |
+          echo "=== Coverage files ==="
+          find . -name "lcov.info" 2>/dev/null
+          cat coverage/lcov.info | head -20
+
       - name: Download dist artifact
         uses: actions/download-artifact@v4
         with:
