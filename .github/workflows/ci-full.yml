@@ -131,6 +131,12 @@ jobs:
         id: pkg
         run: echo "version=$(node -p "require('./package.json').version")" >> $GITHUB_OUTPUT
 
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run tests with coverage
+        run: npm run test:coverage
+
       - name: Download dist artifact
         uses: actions/download-artifact@v4
         with:
@@ -147,6 +153,14 @@ jobs:
             -Dsonar.organization=${{ secrets.SONAR_ORGANIZATION }}
             -Dsonar.projectName=${{ secrets.SONAR_PROJECT_NAME }}
             -Dsonar.projectVersion=${{ steps.pkg.outputs.version }}
+            -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
+
+      # Comparte el reporte generado por el scan con el siguiente job
+      - name: Upload scan report
+        uses: actions/upload-artifact@v4
+        with:
+          name: sonar-report
+          path: .scannerwork/report-task.txt
 
   # ─── JOB 6: QUALITY GATE ──────────────────────────────────────────────────
   quality-gate:
@@ -156,6 +170,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Download scan report
+        uses: actions/download-artifact@v4
+        with:
+          name: sonar-report
+          path: .scannerwork/
 
       - name: Quality Gate check
         uses: SonarSource/sonarqube-quality-gate-action@v1
