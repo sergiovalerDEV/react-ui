@@ -14,6 +14,9 @@ export default [
         ecmaVersion: 'latest',
         sourceType: 'module',
       },
+      globals: {
+        ...globals.browser,
+      },
     },
     plugins: {
       '@typescript-eslint': tsPlugin,
