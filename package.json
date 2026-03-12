@@ -26,7 +26,7 @@
             "lint": "eslint src --ext .ts,.tsx",
             "test": "jest",
             "test:watch": "jest --watch",
-            "test:coverage": "jest --coverage --coverageReporters=lcov",
+            "test:coverage": "jest --coverage",
             "prepublishOnly": "npm run build"
       },
       "peerDependencies": {
